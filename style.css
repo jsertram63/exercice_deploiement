@@ -1,0 +1,231 @@
+body {
+  margin: 0;
+  background: url(image/andrey-haimin-q2Fyzn-KJOQ-unsplash.jpg);
+  background-size: cover;
+  height: 90vh;
+  font-size: 2em;
+  color: black;
+}
+
+main {
+  background-color: white;
+  margin: 50px;
+  height: 90vh;
+}
+
+.nouvelle_partie img {
+  width: 5%;
+}
+
+.nouvelle_partie {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.nouvelle_partie img,
+.shadow,
+.debut_partie,
+.lancerLaPartie:hover {
+  cursor: pointer;
+}
+.nouvelle_partie img:hover,
+.lancerLaPartie:hover,
+.mise img:hover,
+#victoire button:hover {
+  opacity: 0.5;
+}
+
+.actif_player1 img,
+.actif_player2 img {
+  height: 10%;
+}
+.player1,
+.player2 {
+  font-size: 1.5em;
+}
+
+.player1 p,
+.player2 p {
+  margin: 20px;
+}
+.score_player {
+  color: #ec7575;
+}
+.actif_player1,
+.actif_player2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.actif_p1,
+.actif_p2 {
+  display: none;
+}
+
+#game div {
+  text-align: center;
+}
+
+.debut_partie {
+  box-shadow: 10px 10px 10px #ec7575;
+}
+/*placement des éléments sur la page */
+#game {
+  display: grid;
+  grid-template: 50% 50% /1fr 1fr 1fr;
+  gap: 50px;
+  pointer-events: none;
+}
+.player1 {
+  grid-column: 1/1;
+}
+#de {
+  grid-column: 2/2;
+}
+.player2 {
+  grid-column: 3/3;
+}
+.current_p1 {
+  grid-column: 1/1;
+}
+.current_p2 {
+  grid-column: 3/3;
+}
+
+.current_p1 p,
+.current_p2 p {
+  margin: 0%;
+}
+.current_p1,
+.current_p2 {
+  background-color: #ec7575;
+  width: 50%;
+  height: 70%;
+  margin-left: 25%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.scoreHold {
+  color: white;
+}
+.mise img {
+  width: 10%;
+  cursor: pointer;
+}
+
+.mise div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* animation du dé */
+@keyframes lancement_de {
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+
+.shadow {
+  box-shadow: 10px 10px 10px #ec7575;
+  animation: linear 1s lancement_de;
+}
+
+/*mise en forme du formulaire pour le lancement de la partie */
+.formulaire {
+  background-color: #ec7575;
+  color: white;
+  width: 200px;
+  text-align: center;
+  padding: 30px;
+  border-radius: 30px;
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  display: none;
+}
+
+.lancerLaPartie,
+#victoire button {
+  color: #ec7575;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 30px;
+  background-color: white;
+  font-weight: bold;
+  font-size: medium;
+  color: linear-gradient(to left, #9198e5, #ec7575);
+}
+/*mise en forme du formulaire quand la partie est terminé */
+#victoire {
+  background: linear-gradient(to left, #9198e5, #ec7575);
+  border-radius: 30px;
+  width: 30%;
+  height: 25%;
+  position: absolute;
+  top: 20%;
+  left: 33%;
+  padding: 20px;
+  text-align: center;
+  display: none;
+}
+
+/*partie responsive*/
+@media all and (max-width: 1000px) {
+  body {
+    font-size: small;
+  }
+  main {
+    margin: 2%;
+  }
+  .debut_partie,
+  .shadow {
+    width: 70%;
+  }
+  .actif_player1,
+  .actif_player2 {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+  .actif_p1,
+  .actif_p2 {
+    width: 9%;
+  }
+  #game {
+    display: grid;
+    grid-template: 50% 50% /1fr 1fr 1fr;
+    gap: 10px;
+  }
+  .mise div img {
+    width: 30%;
+  }
+  .mise {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .mise div {
+    font-size: x-small;
+  }
+  .formulaire {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+  }
+  #victoire {
+    width: 60%;
+    left: 20%;
+    top: 10%;
+  }
+  .player1 p,
+  .player2 p {
+    margin: 10px;
+  }
+}

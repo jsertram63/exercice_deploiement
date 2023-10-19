@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="descritpion"
+      content="jeu de dé en ligne. Battez votre adversaire en arrivant le premier à 100 points."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <title>Jeux de dé en ligne</title>
+  </head>
+
+  <body>
+    <main>
+      <div class="nouvelle_partie">
+        <img
+          src="image/plus.png"
+          alt="nouvelle_partie"
+          title="nouvelle_partie"
+        />
+        <p>Nouvelle partie</p>
+      </div>
+
+      <div id="game">
+        <div class="player1">
+          <div class="actif_player1">
+            <p class="name_player">PLAYER1</p>
+            <img
+              src="image/joueur_actif.png"
+              alt="joueur_actif"
+              class="actif_p1"
+            />
+          </div>
+          <p class="score_player">0</p>
+        </div>
+        <div id="de" class="lancer_de">
+          <img src="image/de1.png" alt="de1" class="debut_partie" />
+        </div>
+        <div class="player2">
+          <div class="actif_player2">
+            <p class="name_player">PLAYER2</p>
+            <img
+              src="image/joueur_actif.png"
+              alt="joueur_actif"
+              class="actif_p2"
+            />
+          </div>
+          <p class="score_player">0</p>
+        </div>
+        <div class="current_p1">
+          <p>Current</p>
+          <p class="scoreHold">0</p>
+        </div>
+        <div class="mise">
+          <div>
+            <img
+              src="image/rolldice.png"
+              alt="rolldice"
+              class="roll lancer_de"
+            />
+            <p>ROLL DICE</p>
+          </div>
+          <div>
+            <img src="image/hold.png" alt="hold" class="hold" />
+            <p>HOLD</p>
+          </div>
+        </div>
+        <div class="current_p2">
+          <p>Current</p>
+          <p class="scoreHold">0</p>
+        </div>
+      </div>
+
+      <div class="formulaire">
+        <form method="post">
+          <label for="player1">player1</label>
+          <input type="text" id="form_player1" maxlength="15" />
+          <label for="player2">player2</label>
+          <input type="text" id="form_player2" maxlength="15" />
+          <input
+            type="button"
+            value="Lancer la partie"
+            class="lancerLaPartie"
+          />
+        </form>
+      </div>
+      <div id="victoire">
+        <p class="winner"></p>
+        <button class="revanche">Revanche</button>
+        <button class="nouvellePartie">Nouvelle partie</button>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
